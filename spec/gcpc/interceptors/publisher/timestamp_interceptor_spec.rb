@@ -1,6 +1,5 @@
 require "spec_helper"
 require "timecop"
-require "gcpc/interceptors/publisher/timestamp_interceptor"
 
 describe Gcpc::Interceptors::Publisher::TimestampInterceptor do
   describe "#publish" do

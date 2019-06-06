@@ -1,8 +1,6 @@
-require "gcpc"
-
 module Gcpc
   module Interceptors
-    class Subscriber
+    module Subscriber
       # `CheckOrderInterceptor` checks the duplication of messages.
       class CheckDupInterceptor < Gcpc::Subscriber::BaseInterceptor
         class BaseStrategy

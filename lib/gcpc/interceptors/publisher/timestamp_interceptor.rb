@@ -1,9 +1,8 @@
 require "date"
-require "gcpc"
 
 module Gcpc
   module Interceptors
-    class Publisher
+    module Publisher
       # `TimestampInterceptor` adds a timestamp to a message's attributes in
       # RFC3339 format.
       class TimestampInterceptor < Gcpc::Publisher::BaseInterceptor

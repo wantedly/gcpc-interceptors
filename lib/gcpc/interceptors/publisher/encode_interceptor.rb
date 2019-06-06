@@ -1,8 +1,6 @@
-require "gcpc"
-
 module Gcpc
   module Interceptors
-    class Publisher
+    module Publisher
       # `EncodeInterceptor` encodes a data and publish it as a String.
       class EncodeInterceptor < Gcpc::Publisher::BaseInterceptor
         VALID_CONTENT_TYPES = [

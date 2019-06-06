@@ -1,9 +1,8 @@
 require "securerandom"
-require "gcpc"
 
 module Gcpc
   module Interceptors
-    class Publisher
+    module Publisher
       # `IdInterceptor` adds an unique id to a message's attributes
       class IdInterceptor < Gcpc::Publisher::BaseInterceptor
         DEFAULT_ID_KEY = "message_id"

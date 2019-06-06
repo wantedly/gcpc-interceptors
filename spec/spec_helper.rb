@@ -32,3 +32,5 @@ end
 
 # Set timezone to UTC in test
 ENV['TZ'] = 'UTC'
+
+require 'gcpc/interceptors'

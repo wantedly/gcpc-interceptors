@@ -1,8 +1,8 @@
-require "gcpc"
+require "json"
 
 module Gcpc
   module Interceptors
-    class Subscriber
+    module Subscriber
       # `DecodeInterceptor` decodes the message according to the strategy and
       # sets it in the attributes.
       class DecodeInterceptor < Gcpc::Subscriber::BaseInterceptor

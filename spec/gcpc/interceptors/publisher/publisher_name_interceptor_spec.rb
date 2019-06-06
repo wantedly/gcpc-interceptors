@@ -1,5 +1,4 @@
 require "spec_helper"
-require "gcpc/interceptors/publisher/publisher_name_interceptor"
 
 describe Gcpc::Interceptors::Publisher::PublisherNameInterceptor do
   describe "#publish" do

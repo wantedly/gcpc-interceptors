@@ -1,8 +1,6 @@
-require "gcpc"
-
 module Gcpc
   module Interceptors
-    class Publisher
+    module Publisher
       # `PublisherNameInterceptor` adds a publisher name to a message's
       # attributes
       class PublisherNameInterceptor < Gcpc::Publisher::BaseInterceptor

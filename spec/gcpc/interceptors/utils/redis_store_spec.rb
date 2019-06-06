@@ -1,6 +1,5 @@
 require "spec_helper"
 require "mock_redis"
-require "gcpc/interceptors/utils/redis_store"
 
 describe Gcpc::Interceptors::Utils::RedisStore do
   let(:redis_store) {

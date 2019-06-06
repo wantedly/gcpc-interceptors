@@ -1,6 +1,5 @@
 require "spec_helper"
 require "support/fakes"
-require "gcpc/interceptors/subscriber/check_order_interceptor"
 
 describe Gcpc::Interceptors::Subscriber::CheckOrderInterceptor do
   describe "#handle" do

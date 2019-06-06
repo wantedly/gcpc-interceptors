@@ -1,9 +1,8 @@
 require "date"
-require "gcpc"
 
 module Gcpc
   module Interceptors
-    class Subscriber
+    module Subscriber
       # `CheckOrderInterceptor` checks the order of messages in each group.
       class CheckOrderInterceptor < Gcpc::Subscriber::BaseInterceptor
         class BaseStrategy
@@ -57,7 +56,7 @@ module Gcpc
         # @param [#get, #set] store
         # @param [Logger] logger
         # @param [BaseStrategy] strategy
-        def initialize(store:, logger:, strategy: BaseStrategy.new)
+        def initialize(store:, logger: Logger.new(STDOUT), strategy: BaseStrategy.new)
           @store    = store
           @logger   = logger
           @strategy = strategy
