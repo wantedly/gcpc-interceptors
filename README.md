@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ```ruby
 require "gcpc"
-require "gcpc-interceptors"
+require "gcpc/interceptors"
 
 publisher = Gcpc::Publisher.new(
   project_id:    "project-example-1",
@@ -51,7 +51,7 @@ publisher.publish(jsondata, attributes)  # published as `{"key":"value"}`, {"pub
 
 ```ruby
 require "gcpc"
-require "gcpc-interceptors"
+require "gcpc/interceptors"
 
 class LogHandler < Gcpc::Subscriber::BaseHandler
   LOGGER = Logger.new(STDOUT)
