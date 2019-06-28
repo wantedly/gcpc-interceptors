@@ -19,8 +19,12 @@ module Gcpc
         end
 
         # @param [BaseStrategy] strategy
-        def initialize(strategy:)
-          @strategy = strategy
+        # @param [Logger] logger
+        # @param [Boolean] ignore_on_error Ignore the message when decode failed
+        def initialize(strategy:, logger: Logger.new(STDOUT), ignore_on_error: true)
+          @strategy        = strategy
+          @logger          = logger
+          @ignore_on_error = ignore_on_error
         end
 
         # @param [String] data
@@ -28,7 +32,20 @@ module Gcpc
         # @param [Google::Cloud::Pubsub::ReceivedMessage] message
         # @param [Proc] block
         def handle(data, attributes, message, &block)
-          m = @strategy.decode(data, attributes, message)
+          begin
+            m = @strategy.decode(data, attributes, message)
+          rescue => e
+            @logger.error(e)
+
+            if @ignore_on_error
+              @logger.info("Ack a message{data=#{message.data}, attributes=#{message.attributes}} because it can't be decoded!")
+              message.ack!  # Ack immediately if decode failed
+              return
+            else
+              raise e
+            end
+          end
+
           yield m, attributes, message
         end
       end
