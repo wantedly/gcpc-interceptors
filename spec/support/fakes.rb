@@ -14,6 +14,14 @@ class FakeMessage
   end
 
   attr_reader :data, :attributes
+
+  def ack!
+    # Do nothing
+  end
+
+  def nack!
+    # Do nothing
+  end
 end
 
 class FakeStore
@@ -31,5 +39,19 @@ class FakeStore
 
   def exists(key)
     @store.has_key?(key)
+  end
+end
+
+class FakeLogger
+  def initialize
+    @messages = {}
+  end
+  attr_reader :messages
+
+  [:debug, :info, :warn, :error, :fatal].each do |level|
+    define_method level do |obj|
+      @messages[level] ||= []
+      @messages[level] << obj
+    end
   end
 end
