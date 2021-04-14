@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{The collection of interceptors for gcpc (Google Cloud Pub/Sub Client for Ruby)}
   spec.description   = %q{The collection of interceptors for gcpc (Google Cloud Pub/Sub Client for Ruby)}
-  spec.homepage      = "https://github.com/south37/gcpc-interceptors"
+  spec.homepage      = "https://github.com/wantedly/gcpc-interceptors"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
