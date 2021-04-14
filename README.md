@@ -1,6 +1,6 @@
 # Gcpc::Interceptors
 
-Gcpc::Interceptors is a collection of interceptors for [gcpc](https://github.com/south37/gcpc).
+Gcpc::Interceptors is a collection of interceptors for [gcpc](https://github.com/wantedly/gcpc).
 
 ## Installation
 
@@ -101,7 +101,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/south37/gcpc-interceptors.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wantedly/gcpc-interceptors.
 
 ## License
 
